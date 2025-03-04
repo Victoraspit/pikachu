@@ -28,6 +28,13 @@ header {
     left: 10px;
 }
 
+@media screen and (max-width: 620px) {
+    #logo {
+        position: relative;
+        margin-left: 35%;
+    }
+}
+
 #logo-title {
     font-size: 100px;
     text-align: center;
@@ -54,7 +61,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    color: hotpink;
+    color: mediumblue;
 }
 
 a {
@@ -72,13 +79,15 @@ a:visited {
 
 .intro-container {
     background-color: khaki;
-    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .image-container {
     max-width: 600px;
     margin: 0;
-    float: left;
     padding: 3%;
     box-sizing: border-box;
 }
@@ -92,7 +101,6 @@ a:visited {
 }
 
 .intro-text {
-    float: left;
     max-width: 600px;
     margin: 0;
     padding: 3%;
@@ -119,17 +127,60 @@ footer p {
 
 .gallery-container {
     background-color: khaki;
-    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .gallery-image {
-    width: 25%;
+    width: 300px;
     height: 200px;
-    float: left;
     padding: 5px;
     box-sizing: border-box;
     outline: 5px solid black;
     outline-offset: -10px;
+}
+
+
+/* FULL SCREEN IMAGE MODAL */
+
+.modal {
+    z-index: 1;
+    display: none;
+    padding-top: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    position: absolute;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.close {
+    text-decoration: none;
+    float: right;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding-right: 3%;
+}
+
+#fullsize-img {
+    max-height: 90vh;
+    width: auto;
 }
 
 
@@ -139,4 +190,9 @@ footer p {
     background-color: khaki;
     overflow: auto;
     text-align: center;
+}
+
+.inside-about-container {
+    font-family: 'Bebas Neue';
+    text-align: left;
 }

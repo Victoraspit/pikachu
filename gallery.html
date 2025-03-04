@@ -34,14 +34,35 @@
                 </li>
             </ul>
         </nav>
-        <!-- intro area -->
+        <!-- gallery area -->
         <article class="gallery-container">
-            <a href="./images/p3.jpg"><img class="gallery-image" src="./images/p3.jpg" alt="sleeping pikachu"></a>
-            <a href="./images/p4.jpg"><img class="gallery-image" src="./images/p4.jpg" alt="smiling pikachu"></a>
-            <a href="./images/p5.jpg"><img class="gallery-image" src="./images/p5.jpg" alt="pikachu and Ash"></a>
-            <a href="./images/p6.jpg"><img class="gallery-image" src="./images/p6.jpg" alt="group of pikachus"></a>
+
+            <div class="thumb-container">
+                <img src="./images/p3.jpg" class="gallery-image" alt="sleeping pikachu" onclick="openModal(this)">
+            </div>
+
+            <div class="thumb-container">
+                <img src="./images/p4.jpg" class="gallery-image" alt="smiling pikachu" onclick="openModal(this)">
+            </div>
+
+            <div class="thumb-container">
+                <img src="./images/p5.jpg" class="gallery-image" alt="pikachu and Ash" onclick="openModal(this)">
+            </div>
+
+            <div class="thumb-container">
+                <img src="./images/p6.jpg" class="gallery-image" alt="group of pikachus" onclick="openModal(this)">
+            </div>
 
 
+
+            <!-- FULL SCREEN IMAGE MODAL - HIDDEN BY DEFAULT -->
+            <div id="modal1" class="modal" onclick="this.style.display='none'">
+                <span class="close">&times;</span>
+                <div class="modal-content">
+                    <img id="fullsize-img" alt="pikachu">
+                </div>
+
+            </div>
 
 
         </article>
@@ -54,5 +75,11 @@
 
 </body>
 
+<script>
+    function openModal(item) {
+        document.getElementById("fullsize-img").src = item.src;
+        document.getElementById("modal1").style.display = "block";
+    }
+</script>
 
 </html>
